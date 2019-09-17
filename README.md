@@ -14,9 +14,9 @@ public ResultStatus add(CampaignMessage cm) {
 }
 
 
-##Two ways to log the consumed time with spring framework
+## Two ways to log the consumed time with spring framework
 
-###1, aspectj-autoproxy
+### 1, aspectj-autoproxy
 
 An implement to log with @Aspect and @Around
 
@@ -68,7 +68,7 @@ Then configure it in applicationContext-Serivce.xml below,
 </beans>
 
 
-###2, Use <aop:config> style, no need to add class, this is more flexible
+### 2, Use <aop:config> style, no need to add class, this is more flexible
 
     <aop:config>
         <aop:aspect ref="performanceAspect">
@@ -79,7 +79,7 @@ Then configure it in applicationContext-Serivce.xml below,
     </aop:config>
 
 
-##Note:
+## Note:
 he recommended usage pattern is to use either just the <aop:config> style, or just the AutoProxyCreator style. reference - https://docs.spring.io/spring/docs/2.0.x/reference/aop.html
 
 ## Build
