@@ -2,6 +2,7 @@ package my.util.performance;
 
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +31,18 @@ public class AuditUtil {
             logger.info("Method {} of {} consumed {} milliseconds",
                     joinPoint.getSignature().getName(), joinPoint.getTarget().getClass().getName(),
                     stopWatch.getTime(TimeUnit.MILLISECONDS));
+
+            /**
+             * Log with Auditable arguments
+             */
+//            MethodSignature methodSignature = (MethodSignature)joinPoint.getSignature();
+//            Auditable auditable = methodSignature.getMethod().getAnnotation(Auditable.class);
+//            if (auditable != null){
+//                logger.info("Method {} of {} consumed {} milliseconds",
+//                        auditable.methodName(), auditable.moduleName(),
+//                        stopWatch.getTime(TimeUnit.MILLISECONDS));
+//            }
+
         }
 
     }
